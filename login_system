@@ -1,0 +1,18 @@
+while True:
+    try:
+        username = str(input("Enter username: ")).upper()
+        credentials = {"SRIHARI": "HELLO", "TRAVIS": "HEAD", "MITCHELL": "STARC", "MITCHELL": "MARSH", "STEVEN": "SMITH"}
+        if username not in credentials:
+            print("Unauthorized access is prohibited.")
+            continue
+        password = str(input("Enter password: ")).upper()
+        if password == credentials[username]:
+            print("Login Successful")
+            import webbrowser
+            webbrowser.open("https://google.com/")
+            break
+        else:
+            print("Incorrect Password. Please try again. ")
+            continue
+    except ValueError:
+        print("Please provide valid input")
